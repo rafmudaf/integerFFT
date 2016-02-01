@@ -13,6 +13,11 @@
 
 int main(int argc, char* argv[])
 {
+/**************************** config **********************************/
+    int N = 512;
+    int scaleby = 16384;
+/**********************************************************************/
+
     if ( argc != 3 ) {
         printf( "usage: %s input-file-name output-file-name\n", argv[0] );
         return 1;
@@ -27,7 +32,6 @@ int main(int argc, char* argv[])
     int dataLines = 1<<(log2nLines+1);
 
     // FFT size and input signal size
-    int N = 512;
     int log2n = fix_log2(N);
     int loops = dataLines>>log2n;
 
@@ -50,7 +54,6 @@ int main(int argc, char* argv[])
         for ( j=0; j<nLines; j++ ) {
             dataIn[j][axis] -= mean;
         }
-        int scaleby = 16384;
         int scalefactor = fix_log2(scaleby);
         for ( j=0; j<nLines; j++ ) {
             if (dataIn[j][axis] != 0) {
