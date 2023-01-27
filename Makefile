@@ -9,6 +9,10 @@
 #  -g    adds debugging information to the executable file
 #  -Wall turns on most, but not all, compiler warnings
 #
+
+# A CMake project is included. This Makefile is maintained
+# for reference but it will be removed in the future.
+
 CC = gcc
 CFLAGS  = -g -Wall
 
